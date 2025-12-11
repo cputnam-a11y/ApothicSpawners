@@ -3,13 +3,13 @@
   "id": "apothicspawners",
   "version": "${version}",
   "name": "Apothic Spawners",
-  "description": "A Fabric port of the Apothic Spawners mod by Shadows-of-Fire for neoforge",
+  "description": "A Fabric port of the Apothic Spawners mod by Shadows-of-Fire for neoforge. Please report issues to cputnam-a11y, and not Shadows-of-Fire",
   "authors": [
     "cputnam-a11y"
   ],
   "contact": {
-    "sources": "https://github.com/FabricMC/fabric-example-mod",
-    "issues": ""
+    "sources": "https://github.com/cputnam-a11y/ApothicSpawners",
+    "issues": "https://github.com/cputnam-a11y/ApothicSpawners"
   },
   "license": "MIT",
   "icon": "assets/apothicspawners/icon.png",
