@@ -1,0 +1,10 @@
+{
+  "mainhand": "minecraft:prismarine_crystals",
+  "stat_changes": [
+    {
+      "type": "apothicspawners:req_player_range",
+      "value": 4,
+      "max": 48
+    }
+  ]
+}

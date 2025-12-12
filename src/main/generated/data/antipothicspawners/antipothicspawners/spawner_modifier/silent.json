@@ -1,0 +1,9 @@
+{
+  "mainhand": "#minecraft:wool",
+  "stat_changes": [
+    {
+      "type": "antipothicspawners:silent",
+      "value": true
+    }
+  ]
+}

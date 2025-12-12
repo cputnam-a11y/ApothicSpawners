@@ -1,0 +1,9 @@
+{
+  "mainhand": "minecraft:nether_star",
+  "stat_changes": [
+    {
+      "type": "antipothicspawners:ignore_players",
+      "value": true
+    }
+  ]
+}

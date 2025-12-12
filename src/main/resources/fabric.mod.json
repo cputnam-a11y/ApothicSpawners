@@ -1,28 +1,28 @@
 {
   "schemaVersion": 1,
-  "id": "apothicspawners",
+  "id": "antipothicspawners",
   "version": "${version}",
-  "name": "Apothic Spawners",
+  "name": "Antipothic Spawners",
   "description": "A Fabric port of the Apothic Spawners mod by Shadows-of-Fire for neoforge. Please report issues to cputnam-a11y, and not Shadows-of-Fire",
   "authors": [
     "cputnam-a11y"
   ],
   "contact": {
-    "sources": "https://github.com/cputnam-a11y/ApothicSpawners",
-    "issues": "https://github.com/cputnam-a11y/ApothicSpawners"
+    "sources": "https://github.com/cputnam-a11y/AntipothicSpawners",
+    "issues": "https://github.com/cputnam-a11y/AntipothicSpawners"
   },
   "license": "MIT",
   "icon": "assets/apothicspawners/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "io.github.cputnama11y.apothicspawners.impl.ApothicSpawners"
+      "io.github.cputnama11y.antipothicspawners.impl.AntipothicSpawners"
     ],
     "client": [
-      "io.github.cputnama11y.apothicspawners.impl.ApothicSpawnersClient"
+      "io.github.cputnama11y.anitpothicspawners.impl.AntipothicSpawnersClient"
     ],
     "fabric-datagen": [
-      "io.github.cputnama11y.apothicspawners.impl.datagen.ApothicSpawnersDataGenerator"
+      "io.github.cputnama11y.anitpothicspawners.impl.datagen.AntipothicSpawnersDataGenerator"
     ]
   },
   "mixins": [
@@ -37,5 +37,6 @@
     "minecraft": "~1.21.11",
     "java": ">=21",
     "fabric-api": "*"
-  }
+  },
+  "accessWidener": "apothicspawners.aw"
 }

@@ -1,0 +1,9 @@
+{
+  "mainhand": "minecraft:campfire",
+  "stat_changes": [
+    {
+      "type": "antipothicspawners:burning",
+      "value": true
+    }
+  ]
+}

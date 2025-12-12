@@ -1,0 +1,11 @@
+{
+  "mainhand": "minecraft:fermented_spider_eye",
+  "offhand": "minecraft:quartz",
+  "stat_changes": [
+    {
+      "type": "apothicspawners:spawn_count",
+      "value": -2,
+      "min": 1
+    }
+  ]
+}

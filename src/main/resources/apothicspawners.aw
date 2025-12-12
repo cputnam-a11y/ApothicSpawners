@@ -1,0 +1,16 @@
+accessWidener v2 named
+accessible field net/minecraft/world/level/block/entity/SpawnerBlockEntity spawner Lnet/minecraft/world/level/BaseSpawner;
+mutable field net/minecraft/world/level/block/entity/SpawnerBlockEntity spawner Lnet/minecraft/world/level/BaseSpawner;
+accessible field net/minecraft/world/level/BaseSpawner spawnDelay I
+accessible field net/minecraft/world/level/BaseSpawner spawnPotentials Lnet/minecraft/util/random/WeightedList;
+accessible field net/minecraft/world/level/BaseSpawner nextSpawnData Lnet/minecraft/world/level/SpawnData;
+accessible field net/minecraft/world/level/BaseSpawner spin D
+accessible field net/minecraft/world/level/BaseSpawner oSpin D
+accessible field net/minecraft/world/level/BaseSpawner minSpawnDelay I
+accessible field net/minecraft/world/level/BaseSpawner maxSpawnDelay I
+accessible field net/minecraft/world/level/BaseSpawner spawnCount I
+accessible field net/minecraft/world/level/BaseSpawner maxNearbyEntities I
+accessible field net/minecraft/world/level/BaseSpawner requiredPlayerRange I
+accessible field net/minecraft/world/level/BaseSpawner spawnRange I
+accessible method net/minecraft/world/level/BaseSpawner getOrCreateNextSpawnData (Lnet/minecraft/world/level/Level;Lnet/minecraft/util/RandomSource;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/SpawnData;
+accessible method net/minecraft/world/level/BaseSpawner isNearPlayer (Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)Z

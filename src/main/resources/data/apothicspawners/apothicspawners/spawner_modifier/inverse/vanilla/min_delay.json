@@ -1,0 +1,11 @@
+{
+  "mainhand": "minecraft:sugar",
+  "offhand": "minecraft:quartz",
+  "stat_changes": [
+    {
+      "type": "apothicspawners:min_delay",
+      "value": 10,
+      "max": 1600
+    }
+  ]
+}

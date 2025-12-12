@@ -1,0 +1,10 @@
+{
+  "mainhand": "minecraft:clock",
+  "stat_changes": [
+    {
+      "type": "apothicspawners:max_delay",
+      "value": -20,
+      "min": 20
+    }
+  ]
+}

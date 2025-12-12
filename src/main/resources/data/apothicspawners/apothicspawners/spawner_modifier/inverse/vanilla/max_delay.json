@@ -1,0 +1,11 @@
+{
+  "mainhand": "minecraft:clock",
+  "offhand": "minecraft:quartz",
+  "stat_changes": [
+    {
+      "type": "apothicspawners:max_delay",
+      "value": 20,
+      "max": 1600
+    }
+  ]
+}

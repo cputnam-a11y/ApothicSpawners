@@ -1,0 +1,10 @@
+{
+  "mainhand": "#minecraft:wool",
+  "offhand": "minecraft:quartz",
+  "stat_changes": [
+    {
+      "type": "antipothicspawners:silent",
+      "value": false
+    }
+  ]
+}

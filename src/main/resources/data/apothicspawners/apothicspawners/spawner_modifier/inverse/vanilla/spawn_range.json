@@ -1,0 +1,11 @@
+{
+  "mainhand": "minecraft:piston",
+  "offhand": "minecraft:quartz",
+  "stat_changes": [
+    {
+      "type": "apothicspawners:spawn_range",
+      "value": -2,
+      "min": 1
+    }
+  ]
+}

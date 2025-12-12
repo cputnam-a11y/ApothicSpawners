@@ -1,0 +1,9 @@
+{
+  "mainhand": "minecraft:comparator",
+  "stat_changes": [
+    {
+      "type": "antipothicspawners:redstone_control",
+      "value": true
+    }
+  ]
+}

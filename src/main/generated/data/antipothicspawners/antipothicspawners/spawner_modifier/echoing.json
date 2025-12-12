@@ -1,0 +1,10 @@
+{
+  "mainhand": "minecraft:echo_shard",
+  "stat_changes": [
+    {
+      "type": "antipothicspawners:echoing",
+      "max": 5,
+      "value": 1
+    }
+  ]
+}

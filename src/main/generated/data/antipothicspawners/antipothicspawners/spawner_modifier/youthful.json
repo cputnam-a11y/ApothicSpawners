@@ -1,0 +1,9 @@
+{
+  "mainhand": "minecraft:turtle_egg",
+  "stat_changes": [
+    {
+      "type": "antipothicspawners:youthful",
+      "value": true
+    }
+  ]
+}

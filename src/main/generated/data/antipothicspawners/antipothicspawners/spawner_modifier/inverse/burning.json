@@ -1,0 +1,10 @@
+{
+  "mainhand": "minecraft:campfire",
+  "offhand": "minecraft:quartz",
+  "stat_changes": [
+    {
+      "type": "antipothicspawners:burning",
+      "value": false
+    }
+  ]
+}

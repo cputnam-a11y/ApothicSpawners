@@ -1,0 +1,10 @@
+{
+  "mainhand": "minecraft:turtle_egg",
+  "offhand": "minecraft:quartz",
+  "stat_changes": [
+    {
+      "type": "antipothicspawners:youthful",
+      "value": false
+    }
+  ]
+}

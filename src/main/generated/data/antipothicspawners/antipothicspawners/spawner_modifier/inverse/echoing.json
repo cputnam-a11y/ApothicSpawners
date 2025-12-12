@@ -1,0 +1,11 @@
+{
+  "mainhand": "minecraft:echo_shard",
+  "offhand": "minecraft:quartz",
+  "stat_changes": [
+    {
+      "type": "antipothicspawners:echoing",
+      "min": 0,
+      "value": -1
+    }
+  ]
+}

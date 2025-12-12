@@ -1,0 +1,10 @@
+{
+  "mainhand": "minecraft:sugar",
+  "stat_changes": [
+    {
+      "type": "apothicspawners:min_delay",
+      "value": -10,
+      "min": 20
+    }
+  ]
+}
