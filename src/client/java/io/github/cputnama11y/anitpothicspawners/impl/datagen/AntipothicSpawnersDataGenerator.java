@@ -13,6 +13,7 @@ public class AntipothicSpawnersDataGenerator implements DataGeneratorEntrypoint 
         pack.addProvider(AntipothicEnchantmentProvider::new);
         pack.addProvider(AntipothicEnchantmentTagProvider::new);
         pack.addProvider(AntipothicSpawnerModifierProvider::new);
+        pack.addProvider(AntipothicSpawnersLangProvider::new);
     }
 
     @Override
