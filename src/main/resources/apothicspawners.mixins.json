@@ -5,10 +5,12 @@
   "mixins": [
     "BaseSpawnerMixin",
     "BlockBehaviorMixin",
+    "BlockEntityMixin",
     "BlockEntityTypeMixin",
     "BlockMixin",
     "SimplePreparableResourceReloadListenerMixin",
     "SpawnerBlockEntity$1Mixin",
+    "SpawnerBlockEntityMixin",
     "SpawnerBlockMixin"
   ],
   "injectors": {

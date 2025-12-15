@@ -1,5 +1,6 @@
 package io.github.cputnama11y.antipothicspawners.impl;
 
+import io.github.cputnama11y.antipothicspawners.impl.component.AntipothicComponents;
 import io.github.cputnama11y.antipothicspawners.impl.enchantment.AntipothicEnchantmentEffectComponents;
 import io.github.cputnama11y.antipothicspawners.impl.handler.CapturingHandler;
 import io.github.cputnama11y.antipothicspawners.impl.handler.EchoingHandler;
@@ -29,6 +30,7 @@ public class AntipothicSpawners implements ModInitializer {
         LootTableEvents.MODIFY_DROPS.register(new CapturingHandler());
         LootTableEvents.MODIFY_DROPS.register(new EchoingHandler());
         SpawnerStats.init();
+        AntipothicComponents.init();
         ResourceLoader.get(PackType.SERVER_DATA).registerReloader(
                 id("modifier_loader"),
                 new StatefulPreparableReloadListener(

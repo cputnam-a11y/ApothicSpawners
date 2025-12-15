@@ -1,0 +1,10 @@
+{
+  "mainhand": "minecraft:conduit",
+  "offhand": "minecraft:quartz",
+  "stat_changes": [
+    {
+      "type": "antipothicspawners:ignore_conditions",
+      "value": false
+    }
+  ]
+}

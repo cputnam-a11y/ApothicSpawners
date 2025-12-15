@@ -1,5 +1,8 @@
 package io.github.cputnama11y.antipothicspawners.mixin;
 
+import com.llamalad7.mixinextras.expression.Definition;
+import com.llamalad7.mixinextras.expression.Expression;
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
@@ -9,10 +12,13 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.BaseSpawner;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.SpawnData;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import java.util.Optional;
 
 
 @Mixin(BaseSpawner.class)
@@ -90,4 +96,25 @@ public class BaseSpawnerMixin {
     protected void handleEchoingModifier(ServerLevel serverLevel, BlockPos blockPos, CallbackInfo ci, @Local Entity entity) {
 
     }
+
+    @ModifyExpressionValue(
+            method = "serverTick",
+            at = {
+                    @At(value = "INVOKE", target = "Lnet/minecraft/world/level/SpawnData;getCustomSpawnRules()Ljava/util/Optional;")
+            }
+    )
+    protected Optional<SpawnData.CustomSpawnRules> getApplicableCustomRules(Optional<SpawnData.CustomSpawnRules> original) {
+        return original;
+    }
+
+    @Definition(id = "checkSpawnRules", method = "Lnet/minecraft/world/entity/SpawnPlacements;checkSpawnRules(Lnet/minecraft/world/entity/EntityType;Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/entity/EntitySpawnReason;Lnet/minecraft/core/BlockPos;Lnet/minecraft/util/RandomSource;)Z")
+    @Expression("checkSpawnRules(?, ?, ?, ?, ?)")
+    @ModifyExpressionValue(
+            method = "serverTick",
+            at = @At("MIXINEXTRAS:EXPRESSION")
+    )
+    protected boolean cancelPlacementCheckIfIgnoreConditions(boolean original) {
+        return original;
+    }
+
 }

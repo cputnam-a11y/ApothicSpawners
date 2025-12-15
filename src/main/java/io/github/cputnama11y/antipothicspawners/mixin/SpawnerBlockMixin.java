@@ -1,9 +1,15 @@
 package io.github.cputnama11y.antipothicspawners.mixin;
 
+import com.google.common.collect.ImmutableMap;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import io.github.cputnama11y.antipothicspawners.impl.AntipothicSpawners;
 import io.github.cputnama11y.antipothicspawners.impl.attachment.AntipothicAttachments;
+import io.github.cputnama11y.antipothicspawners.impl.component.AntipothicComponents;
+import io.github.cputnama11y.antipothicspawners.impl.component.SpawnerStatsComponent;
 import io.github.cputnama11y.antipothicspawners.impl.modifier.SpawnerModifier;
+import io.github.cputnama11y.antipothicspawners.impl.stats.CustomStat;
+import io.github.cputnama11y.antipothicspawners.impl.stats.SpawnerStat;
+import io.github.cputnama11y.antipothicspawners.impl.stats.SpawnerStats;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
@@ -57,7 +63,13 @@ public abstract class SpawnerBlockMixin extends BlockMixin {
             spawner.saveCustomOnly(tagValueOutput);
             spawner.removeComponentsFromTag(tagValueOutput);
             BlockItem.setBlockEntityData(spawnerStack, spawner.getType(), tagValueOutput);
+            var statsBuilder = ImmutableMap.<SpawnerStat<@NotNull Object>, Object>builder();
+            for (var stat : SpawnerStats.REGISTRY) {
+                if (!(stat instanceof CustomStat<?>)) continue;
+                statsBuilder.put((SpawnerStat<@NotNull Object>) stat, stat.getValue(spawner));
+            }
             spawnerStack.applyComponents(spawner.collectComponents());
+            spawnerStack.set(AntipothicComponents.SPAWNER_STATS, new SpawnerStatsComponent(statsBuilder.build()));
         }
 
         return List.of(spawnerStack);
@@ -101,10 +113,16 @@ public abstract class SpawnerBlockMixin extends BlockMixin {
         if (!spawnerStack.is(Items.SPAWNER) || !(te instanceof SpawnerBlockEntity spawner)) return spawnerStack;
         try (ProblemReporter.ScopedCollector scopedCollector = new ProblemReporter.ScopedCollector(spawner.problemPath(), AntipothicSpawners.LOGGER)) {
             TagValueOutput tagValueOutput = TagValueOutput.createWithContext(scopedCollector, level.registryAccess());
-            spawner.saveCustomOnly(tagValueOutput);
+            spawner.saveWithoutMetadata(tagValueOutput);
             spawner.removeComponentsFromTag(tagValueOutput);
             BlockItem.setBlockEntityData(spawnerStack, spawner.getType(), tagValueOutput);
+            var statsBuilder = ImmutableMap.<SpawnerStat<@NotNull Object>, Object>builder();
+            for (var stat : SpawnerStats.REGISTRY) {
+                if (!(stat instanceof CustomStat<?>)) continue;
+                statsBuilder.put((SpawnerStat<@NotNull Object>) stat, stat.getValue(spawner));
+            }
             spawnerStack.applyComponents(spawner.collectComponents());
+            spawnerStack.set(AntipothicComponents.SPAWNER_STATS, new SpawnerStatsComponent(statsBuilder.build()));
         }
         return spawnerStack;
     }

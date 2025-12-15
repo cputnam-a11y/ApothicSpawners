@@ -1,0 +1,9 @@
+{
+  "mainhand": "minecraft:conduit",
+  "stat_changes": [
+    {
+      "type": "antipothicspawners:ignore_conditions",
+      "value": true
+    }
+  ]
+}

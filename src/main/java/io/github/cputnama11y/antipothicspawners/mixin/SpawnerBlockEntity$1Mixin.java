@@ -10,12 +10,16 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.level.BaseSpawner;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.SpawnData;
 import net.minecraft.world.level.block.entity.SpawnerBlockEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import java.util.Objects;
+import java.util.Optional;
 
 
 @Mixin(targets = "net.minecraft.world.level.block.entity.SpawnerBlockEntity$1")
@@ -85,5 +89,15 @@ public class SpawnerBlockEntity$1Mixin extends BaseSpawnerMixin {
         if (echoing > 0) {
             entity.getSelfAndPassengers().forEach(it -> it.setAttached(AntipothicAttachments.ECHOING, echoing));
         }
+    }
+
+    @Override
+    protected Optional<SpawnData.CustomSpawnRules> getApplicableCustomRules(Optional<SpawnData.CustomSpawnRules> original) {
+        return super.getApplicableCustomRules(original).filter(it -> Objects.requireNonNullElse(SpawnerStats.IGNORE_CONDITIONS.getValue(this.spawner), false));
+    }
+
+    @Override
+    protected boolean cancelPlacementCheckIfIgnoreConditions(boolean original) {
+        return super.cancelPlacementCheckIfIgnoreConditions(original) || Objects.requireNonNullElse(SpawnerStats.IGNORE_CONDITIONS.getValue(this.spawner), false);
     }
 }

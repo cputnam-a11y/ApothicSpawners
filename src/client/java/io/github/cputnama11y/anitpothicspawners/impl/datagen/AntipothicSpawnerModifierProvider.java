@@ -305,6 +305,26 @@ public class AntipothicSpawnerModifierProvider extends FabricCodecDataProvider<S
                         )
                 )
         );
+        provider.accept(
+                id("ignore_conditions"),
+                new SpawnerModifier(
+                        Ingredient.of(Items.CONDUIT),
+                        List.of(
+                                new StatModifier<>(SpawnerStats.IGNORE_CONDITIONS, true)
+                        )
+                )
+        );
+        provider.accept(
+                id("inverse/ignore_conditions"),
+                new SpawnerModifier(
+                        Ingredient.of(Items.CONDUIT),
+                        Optional.of(Ingredient.of(Items.QUARTZ)),
+                        false,
+                        List.of(
+                                new StatModifier<>(SpawnerStats.IGNORE_CONDITIONS, false)
+                        )
+                )
+        );
     }
 
     @Override

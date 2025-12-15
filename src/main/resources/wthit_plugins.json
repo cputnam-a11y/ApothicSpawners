@@ -1,0 +1,8 @@
+{
+  "antipothicspawners:spawner-peaky": {
+    "entrypoints": {
+      "client": "io.github.cputnama11y.anitpothicspawners.impl.compat.wthit.SpawnerPeakingPlugin"
+    },
+    "side": "*"
+  }
+}
