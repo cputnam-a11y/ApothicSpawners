@@ -37,13 +37,5 @@ public class ModifierLoader extends SimpleJsonResourceReloadListener<SpawnerModi
         ServerLifecycleEvents.SYNC_DATA_PACK_CONTENTS.register((player, joined) -> {
             player.setAttached(AntipothicAttachments.MODIFIERS, player.level().getServer().getOrThrow(MODIFIERS_STORE_KEY));
         });
-//        ServerLifecycleEvents.END_DATA_PACK_RELOAD.register((server, resourceManager, success) -> {
-//            System.out.println("END_DATAPACK_RELOAD");
-//        });
-//        ServerLifecycleEvents.SERVER_STOPPING.register(server -> SERVER = null);
     }
-
-//    private static void updateModifiers(MinecraftServer server, ImmutableList<SpawnerModifier> modifiers) {
-//        server.getAllLevels().forEach(it -> it.setAttached(AntipothicAttachments.MODIFIERS, modifiers));
-//    }
 }

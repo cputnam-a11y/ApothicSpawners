@@ -1,0 +1,10 @@
+{
+  "mainhand": "minecraft:pointed_dripstone",
+  "stat_changes": [
+    {
+      "type": "antipothicspawners:initial_health",
+      "max": 1.0,
+      "value": -0.05
+    }
+  ]
+}

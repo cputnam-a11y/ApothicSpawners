@@ -4,8 +4,8 @@
   "stat_changes": [
     {
       "type": "antipothicspawners:max_nearby_entities",
-      "value": -2,
-      "min": 1
+      "min": 1,
+      "value": -2
     }
   ]
 }

@@ -1,10 +1,11 @@
 {
   "mainhand": "minecraft:prismarine_crystals",
+  "offhand": "minecraft:quartz",
   "stat_changes": [
     {
       "type": "antipothicspawners:req_player_range",
-      "value": 4,
-      "max": 48
+      "min": 1,
+      "value": -4
     }
   ]
 }

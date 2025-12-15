@@ -49,6 +49,10 @@ public class SpawnerModifier {
         this.statChanges = ImmutableList.copyOf(stats);
     }
 
+    public SpawnerModifier(Ingredient mainHand, List<StatModifier<?>> stats) {
+        this(mainHand, Optional.empty(), false, stats);
+    }
+
     /**
      * Tests if this modifier matches the held items.
      *

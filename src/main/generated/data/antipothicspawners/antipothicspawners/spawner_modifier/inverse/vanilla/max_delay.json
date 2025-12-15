@@ -4,8 +4,8 @@
   "stat_changes": [
     {
       "type": "antipothicspawners:max_delay",
-      "value": 20,
-      "max": 1600
+      "max": 1600,
+      "value": 20
     }
   ]
 }

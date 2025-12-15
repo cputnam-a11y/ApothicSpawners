@@ -4,8 +4,8 @@
   "stat_changes": [
     {
       "type": "antipothicspawners:spawn_range",
-      "value": -2,
-      "min": 1
+      "min": 1,
+      "value": -2
     }
   ]
 }

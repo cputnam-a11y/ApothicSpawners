@@ -3,8 +3,8 @@
   "stat_changes": [
     {
       "type": "antipothicspawners:spawn_range",
-      "value": 2,
-      "max": 32
+      "max": 32,
+      "value": 2
     }
   ]
 }

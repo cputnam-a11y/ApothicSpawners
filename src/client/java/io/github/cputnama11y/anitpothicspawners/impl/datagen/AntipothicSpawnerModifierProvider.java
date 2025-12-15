@@ -165,10 +165,150 @@ public class AntipothicSpawnerModifierProvider extends FabricCodecDataProvider<S
                         )
                 )
         );
+        provider.accept(
+                id("initial_health"),
+                new SpawnerModifier(
+                        Ingredient.of(Items.POINTED_DRIPSTONE),
+                        List.of(
+                                new StatModifier<>(SpawnerStats.INITIAL_HEALTH, -0.05f, Optional.empty(), Optional.of(1.0f), StatModifier.Mode.ADD)
+                        )
+                )
+        );
+        provider.accept(
+                id("inverse/initial_health"),
+                new SpawnerModifier(
+                        Ingredient.of(Items.POINTED_DRIPSTONE),
+                        Optional.of(Ingredient.of(Items.QUARTZ)),
+                        false,
+                        List.of(
+                                new StatModifier<>(SpawnerStats.INITIAL_HEALTH, 0.05f, Optional.of(0.20f), Optional.empty(), StatModifier.Mode.ADD)
+                        )
+                )
+        );
+        provider.accept(
+                id("vanilla/max_delay"),
+                new SpawnerModifier(
+                        Ingredient.of(Items.CLOCK),
+                        List.of(
+                                new StatModifier<>(SpawnerStats.MAX_DELAY, -20, Optional.of(20), Optional.empty(), StatModifier.Mode.ADD)
+                        )
+                )
+        );
+        provider.accept(
+                id("inverse/vanilla/max_delay"),
+                new SpawnerModifier(
+                        Ingredient.of(Items.CLOCK),
+                        Optional.of(Ingredient.of(Items.QUARTZ)),
+                        false,
+                        List.of(
+                                new StatModifier<>(SpawnerStats.MAX_DELAY, 20, Optional.empty(), Optional.of(1600), StatModifier.Mode.ADD)
+                        )
+                )
+        );
+        provider.accept(
+                id("vanilla/min_delay"),
+                new SpawnerModifier(
+                        Ingredient.of(Items.SUGAR),
+                        List.of(
+                                new StatModifier<>(SpawnerStats.MIN_DELAY, -10, Optional.of(20), Optional.empty(), StatModifier.Mode.ADD)
+                        )
+                )
+        );
+        provider.accept(
+                id("inverse/vanilla/min_delay"),
+                new SpawnerModifier(
+                        Ingredient.of(Items.SUGAR),
+                        Optional.of(Ingredient.of(Items.QUARTZ)),
+                        false,
+                        List.of(
+                                new StatModifier<>(SpawnerStats.MIN_DELAY, 10, Optional.empty(), Optional.of(1600), StatModifier.Mode.ADD)
+                        )
+                )
+        );
+        provider.accept(
+                id("inverse/vanilla/max_nearby"),
+                new SpawnerModifier(
+                        Ingredient.of(Items.GHAST_TEAR),
+                        Optional.of(Ingredient.of(Items.QUARTZ)),
+                        false,
+                        List.of(
+                                new StatModifier<>(SpawnerStats.MAX_NEARBY_ENTITIES, -2, Optional.of(1), Optional.empty(), StatModifier.Mode.ADD)
+                        )
+                )
+        );
+        provider.accept(
+                id("vanilla/max_nearby"),
+                new SpawnerModifier(
+                        Ingredient.of(Items.GHAST_TEAR),
+                        List.of(
+                                new StatModifier<>(SpawnerStats.MAX_NEARBY_ENTITIES, 2, Optional.empty(), Optional.of(32), StatModifier.Mode.ADD)
+                        )
+                )
+        );
+        provider.accept(
+                id("inverse/vanilla/player_range"),
+                new SpawnerModifier(
+                        Ingredient.of(Items.PRISMARINE_CRYSTALS),
+                        Optional.of(Ingredient.of(Items.QUARTZ)),
+                        false,
+                        List.of(
+                                new StatModifier<>(SpawnerStats.REQ_PLAYER_RANGE, -4, Optional.of(1), Optional.empty(), StatModifier.Mode.ADD)
+                        )
+                )
+        );
+        provider.accept(
+                id("vanilla/player_range"),
+                new SpawnerModifier(
+                        Ingredient.of(Items.PRISMARINE_CRYSTALS),
+                        List.of(
+                                new StatModifier<>(SpawnerStats.REQ_PLAYER_RANGE, 4, Optional.empty(), Optional.of(48), StatModifier.Mode.ADD)
+                        )
+                )
+        );
+        provider.accept(
+                id("vanilla/spawn_count"),
+                new SpawnerModifier(
+                        Ingredient.of(Items.FERMENTED_SPIDER_EYE),
+                        List.of(
+                                new StatModifier<>(SpawnerStats.SPAWN_COUNT, 2, Optional.empty(), Optional.of(16), StatModifier.Mode.ADD)
+                        )
+                )
+        );
+        provider.accept(
+                id("inverse/vanilla/spawn_count"),
+                new SpawnerModifier(
+                        Ingredient.of(Items.FERMENTED_SPIDER_EYE),
+                        Optional.of(Ingredient.of(Items.QUARTZ)),
+                        false,
+                        List.of(
+                                new StatModifier<>(SpawnerStats.SPAWN_COUNT, -2, Optional.of(1), Optional.empty(), StatModifier.Mode.ADD)
+                        )
+                )
+        );
+        provider.accept(
+                id("vanilla/spawn_range"),
+                new SpawnerModifier(
+                        Ingredient.of(Items.PISTON),
+                        List.of(
+                                new StatModifier<>(SpawnerStats.SPAWN_RANGE, 2, Optional.empty(), Optional.of(32), StatModifier.Mode.ADD)
+                        )
+                )
+        );
+        provider.accept(
+                id("inverse/vanilla/spawn_range"),
+                new SpawnerModifier(
+                        Ingredient.of(Items.PISTON),
+                        Optional.of(Ingredient.of(Items.QUARTZ)),
+                        false,
+                        List.of(
+                                new StatModifier<>(SpawnerStats.SPAWN_RANGE, -2, Optional.of(1), Optional.empty(), StatModifier.Mode.ADD)
+                        )
+                )
+        );
     }
 
     @Override
     public String getName() {
-        return "";
+        return "Spawner Modifiers";
     }
 }
