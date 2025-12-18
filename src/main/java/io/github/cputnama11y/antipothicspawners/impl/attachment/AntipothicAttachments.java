@@ -7,12 +7,14 @@ import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentSyncPredicate;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
 import net.minecraft.network.codec.ByteBufCodecs;
+import org.jspecify.annotations.NullMarked;
 
 import java.util.function.Function;
 
 import static io.github.cputnama11y.antipothicspawners.impl.AntipothicSpawners.id;
 
 @SuppressWarnings("UnstableApiUsage")
+@NullMarked
 public class AntipothicAttachments {
 //    public static final AttachmentType<Unit> REDSTONE_CONTROL = AttachmentRegistry.create(
 //            id("redstone_control"),
@@ -28,6 +30,7 @@ public class AntipothicAttachments {
                             ImmutableList::copyOf,
                             Function.identity()
                     ))
+                    .copyOnDeath()
                     .syncWith(SpawnerModifier.STREAM_CODEC.apply(ByteBufCodecs.list()).map(
                             ImmutableList::copyOf,
                             Function.identity()
