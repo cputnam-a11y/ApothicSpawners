@@ -10,6 +10,7 @@ import io.github.cputnama11y.antipothicspawners.impl.modifier.SpawnerModifier;
 import io.github.cputnama11y.antipothicspawners.impl.stats.CustomStat;
 import io.github.cputnama11y.antipothicspawners.impl.stats.SpawnerStat;
 import io.github.cputnama11y.antipothicspawners.impl.stats.SpawnerStats;
+import io.github.cputnama11y.antipothicspawners.impl.util.OptionalFabricAttachmentDebugData;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
@@ -84,8 +85,13 @@ public abstract class SpawnerBlockMixin extends BlockMixin {
                 ? InteractionHand.OFF_HAND
                 : InteractionHand.MAIN_HAND
         );
-        @SuppressWarnings("DataFlowIssue") // will never be null, and if it is, we should die loudly
-        SpawnerModifier match = SpawnerModifier.findMatch(player.getAttached(AntipothicAttachments.MODIFIERS), spawner, itemStack, otherHandStack);
+        var modifiers = player.getAttached(AntipothicAttachments.MODIFIERS);
+        if (modifiers == null) {
+            AntipothicSpawners.LOGGER.info("Failed to find modifiers");
+            AntipothicSpawners.LOGGER.info("Debug Info: {}", OptionalFabricAttachmentDebugData.info(player));
+            return super.handleUseItemOnForSpawners(itemStack, blockState, level, blockPos, player, hand, blockHitResult, original);
+        }
+        SpawnerModifier match = SpawnerModifier.findMatch(modifiers, spawner, itemStack, otherHandStack);
         if (match != null && match.apply(spawner)) {
             if (level.isClientSide()) {
                 return InteractionResult.SUCCESS;
